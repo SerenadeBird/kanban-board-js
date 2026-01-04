@@ -1,10 +1,4 @@
-/* src/styles/main.css */
-
-/* =========================
-   Thème (inspiré GitHub)
-   ========================= */
 :root {
-    /* Couleurs (issues de ton avatar) */
     --c-fond: #0c0b0f;
     --c-surface: #101c27;
     --c-surface-2: #1b2539;
@@ -25,25 +19,6 @@
     --police:
         ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial,
         "Noto Sans", "Liberation Sans", sans-serif;
-}
-
-/* Optionnel : mode clair (simple, pas obligatoire) */
-@media (prefers-color-scheme: dark) {
-    :root {
-        --c-fond: #f7f8fb;
-        --c-surface: #ffffff;
-        --c-surface-2: #eef1f7;
-        --c-bordure: #d8dee9;
-
-        --c-texte: #0b1220;
-        --c-texte-secondaire: #42526e;
-
-        --c-accent: #204864;
-        --c-accent-sombre: #1b2539;
-        --c-accent-violet: #624c70;
-
-        --ombre: 0 10px 25px rgba(16, 28, 39, 0.12);
-    }
 }
 
 /* =========================
