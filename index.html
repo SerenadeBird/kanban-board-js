@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Mini Kanban</title>
+        <meta
+            name="description"
+            content="Mini application Kanban en HTML/CSS/JavaScript : créer, modifier, supprimer et déplacer des tâches entre À faire / En cours / Terminé."
+        />
+        <meta name="color-scheme" content="dark" />
+        <link rel="stylesheet" href="./src/styles/main.css" />
+    </head>
+
+    <body>
+        <a class="lien-evitement" href="#contenu-principal"
+            >Aller au contenu principal</a
+        >
+
+        <header class="entete-appli">
+            <h1 class="titre-appli">Mini Kanban</h1>
+
+            <div class="actions-appli">
+                <!--                <button id="btn-ajouter-tache" type="button">
+                    + Ajouter une tâche
+                    </button>
+                    -->
+                <button id="btn-reinitialiser-tableau" type="button">
+                    Réinitialiser
+                </button>
+            </div>
+        </header>
+
+        <div
+            id="statut-appli"
+            role="status"
+            aria-live="polite"
+            class="visuellement-cache"
+        ></div>
+
+        <main id="contenu-principal" class="contenu-appli" tabindex="-1">
+            <section class="panneau" aria-labelledby="titre-formulaire">
+                <h2 id="titre-formulaire" class="titre-panneau">
+                    Nouvelle tâche
+                </h2>
+
+                <form id="formulaire-tache" autocomplete="off">
+                    <div class="champ">
+                        <label for="tache-titre">Titre</label>
+                        <input
+                            id="tache-titre"
+                            name="title"
+                            type="text"
+                            maxlength="80"
+                            required
+                            placeholder="Ex: Faire la page d’accueil"
+                        />
+                    </div>
+
+                    <div class="champ">
+                        <label for="tache-description"
+                            >Description (optionnel)</label
+                        >
+                        <textarea
+                            id="tache-description"
+                            name="description"
+                            rows="3"
+                            maxlength="300"
+                            placeholder="Ex: responsive + header + section projets…"
+                        ></textarea>
+                    </div>
+
+                    <div class="champ">
+                        <label for="tache-priorite">Priorité</label>
+                        <select id="tache-priorite" name="priority">
+                            <option value="low">Basse</option>
+                            <option value="medium" selected>Moyenne</option>
+                            <option value="high">Haute</option>
+                        </select>
+                    </div>
+
+                    <div class="actions-formulaire">
+                        <button id="btn-enregistrer-tache" type="submit">
+                            Enregistrer
+                        </button>
+                        <button id="btn-annuler-tache" type="button">
+                            Annuler
+                        </button>
+                    </div>
+                </form>
+            </section>
+
+            <section class="tableau-kanban" aria-label="Tableau Kanban">
+                <section
+                    class="colonne"
+                    data-statut="a-faire"
+                    aria-label="À faire"
+                >
+                    <header class="entete-colonne">
+                        <h2 class="titre-colonne">À faire</h2>
+                        <span class="compteur-colonne" data-compteur="a-faire"
+                            >0</span
+                        >
+                    </header>
+                    <div class="zone-depot" data-zone-depot="a-faire"></div>
+                </section>
+
+                <section
+                    class="colonne"
+                    data-statut="en-cours"
+                    aria-label="En cours"
+                >
+                    <header class="entete-colonne">
+                        <h2 class="titre-colonne">En cours</h2>
+                        <span class="compteur-colonne" data-compteur="en-cours"
+                            >0</span
+                        >
+                    </header>
+                    <div class="zone-depot" data-zone-depot="en-cours"></div>
+                </section>
+
+                <section
+                    class="colonne"
+                    data-statut="termine"
+                    aria-label="Terminé"
+                >
+                    <header class="entete-colonne">
+                        <h2 class="titre-colonne">Terminé</h2>
+                        <span class="compteur-colonne" data-compteur="termine"
+                            >0</span
+                        >
+                    </header>
+                    <div class="zone-depot" data-zone-depot="termine"></div>
+                </section>
+            </section>
+        </main>
+
+        <footer class="pied-appli">
+            <small
+                >Données sauvegardées dans le navigateur (localStorage).</small
+            >
+        </footer>
+
+        <script type="module" src="./src/main.js"></script>
+    </body>
+</html>
