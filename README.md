@@ -2,8 +2,8 @@
 Petit tableau Kanban en JavaScript (sans framework) avec persistance en localStorage.
 
 ## Démo
-- GitHub Pages : https://
-
+- GitHub Pages : https://serenadebird.github.io/kanban-board-js/
+  
 ## Fonctionnalités
 - Créer une tâche (titre obligatoire, description optionnelle, priorité).
 - Modifier / supprimer une tâche.
